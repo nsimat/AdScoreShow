@@ -28,8 +28,8 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Copy_Name = c.String(),
-                        Copy_Duration = c.String(),
+                        Copy_Name = c.String(maxLength: 25),
+                        Copy_Duration = c.String(maxLength: 25),
                         SegmentID = c.Int(nullable: false),
                         BrandID = c.Int(nullable: false),
                     })
@@ -45,7 +45,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Category = c.String(),
+                        Category = c.String(maxLength: 25),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -54,7 +54,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        BrandName = c.String(),
+                        BrandName = c.String(maxLength: 25),
                         SegmentID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -66,7 +66,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Country = c.String(),
+                        Country = c.String(maxLength: 2),
                     })
                 .PrimaryKey(t => t.Id);
             

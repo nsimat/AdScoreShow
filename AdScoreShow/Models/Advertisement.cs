@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -18,8 +19,11 @@ namespace AdScoreShow.Models
 
         //The couple (Copy_Name, Copy_Duration) is unique in the database
         [Index("SameAdvert", 1, IsUnique = true)]
+        [StringLength(25)]
         public string Copy_Name { get; set; }
+
         [Index("SameAdvert", 2, IsUnique = true)]
+        [StringLength(25)]
         public string Copy_Duration { get; set; }
 
         public int SegmentID { get; set; }
