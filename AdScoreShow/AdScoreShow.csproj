@@ -150,6 +150,10 @@
     <Compile Include="Migrations\202001191954469_InitialModel.designer.cs">
       <DependentUpon>202001191954469_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001192309408_ModifyingAdvertisementModel.cs" />
+    <Compile Include="Migrations\202001192309408_ModifyingAdvertisementModel.designer.cs">
+      <DependentUpon>202001192309408_ModifyingAdvertisementModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdvertAired.cs" />
     <Compile Include="Models\Advertisement.cs" />
@@ -320,6 +324,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001191954469_InitialModel.resx">
       <DependentUpon>202001191954469_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001192309408_ModifyingAdvertisementModel.resx">
+      <DependentUpon>202001192309408_ModifyingAdvertisementModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

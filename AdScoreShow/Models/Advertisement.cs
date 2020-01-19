@@ -22,9 +22,8 @@ namespace AdScoreShow.Models
         [StringLength(25)]
         public string Copy_Name { get; set; }
 
-        [Index("SameAdvert", 2, IsUnique = true)]
-        [StringLength(25)]
-        public string Copy_Duration { get; set; }
+        [Index("SameAdvert", 2, IsUnique = true)]        
+        public int Copy_Duration { get; set; }
 
         public int SegmentID { get; set; }
         public Segment Segment { get; set; }
