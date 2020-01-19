@@ -1,6 +1,9 @@
 ﻿using AdScoreShow.Models;
+using CsvHelper;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,7 +34,30 @@ namespace AdScoreShow.Controllers
                 return View(viewModel);
             }
 
+            string fileExt = Path.GetExtension(viewModel.UpLoadedCsvFile.FileName).ToUpper();
 
+            if(fileExt == ".CSV")
+            {
+                string inputFilePath = viewModel.UpLoadedCsvFile.FileName;
+
+                using (StreamReader input = System.IO.File.OpenText(inputFilePath))
+                using (CsvReader csvReader = new CsvReader(input, CultureInfo.InvariantCulture))
+                {
+                    IEnumerable<dynamic> records = csvReader.GetRecords<dynamic>();
+
+
+                }
+
+
+            }
+            else
+            {
+
+            }
+
+            
+
+            
             return View();
         }
     }

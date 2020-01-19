@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdScoreShow", "AdScoreShow\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdScoreShow.Tests", "AdScoreShow.Tests\AdScoreShow.Tests.csproj", "{A612EC87-EB74-4472-A5D9-215D499A0359}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdScoreShow.DataModel", "AdScoreShow.DataModel\AdScoreShow.DataModel.csproj", "{BEB52368-AA7A-4F58-9729-7F5F3EF772C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A612EC87-EB74-4472-A5D9-215D499A0359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A612EC87-EB74-4472-A5D9-215D499A0359}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A612EC87-EB74-4472-A5D9-215D499A0359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB52368-AA7A-4F58-9729-7F5F3EF772C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB52368-AA7A-4F58-9729-7F5F3EF772C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB52368-AA7A-4F58-9729-7F5F3EF772C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB52368-AA7A-4F58-9729-7F5F3EF772C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
