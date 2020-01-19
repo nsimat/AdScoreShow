@@ -58,7 +58,7 @@
                         SegmentID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Segments", t => t.SegmentID, cascadeDelete: true)
+                .ForeignKey("dbo.Segments", t => t.SegmentID, cascadeDelete: false)
                 .Index(t => t.SegmentID);
             
             CreateTable(
