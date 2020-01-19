@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace AdScoreShow.DataModel.Models
+namespace AdScoreShow.Models
 {
     public class Market
     {
@@ -17,6 +16,6 @@ namespace AdScoreShow.DataModel.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Country { get; set; }
-        public IEnumerable<AdvertAired> AdvertAireds { get; set; }
+        public ICollection<AdvertAired> AdvertAireds { get; set; }
     }
 }

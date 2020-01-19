@@ -6,13 +6,11 @@ using System.Web;
 
 namespace AdScoreShow.Models
 {
-    public class AdvertisementViewModel
+    public class UploadCsvFileViewModel
     {
-        public Advertisement Advertisement { get; set; }
-
         [Required(ErrorMessage = "A CSV file is required.")]
         [DataType(DataType.Upload)]
-        [Display(Name = "Upload a CSV File here...")]
+        [Display(Name = "Upload a CSV File here: ")]
         public HttpPostedFileBase UpLoadedCsvFile { get; set; }
     }
 }

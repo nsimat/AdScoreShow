@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace AdScoreShow.DataModel.Models
+namespace AdScoreShow.Models
 {
     public class Segment
     {
@@ -18,7 +17,7 @@ namespace AdScoreShow.DataModel.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Category { get; set; }
-        public IEnumerable<Brand> Brands { get; set; }
-        public IEnumerable<Advertisement> Advertisements { get; set; }
+        public ICollection<Brand> Brands { get; set; }
+        public ICollection<Advertisement> Advertisements { get; set; }
     }
 }
