@@ -162,6 +162,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdvertAired.cs" />
     <Compile Include="Models\Advertisement.cs" />
+    <Compile Include="Models\AdvertViewModel.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Market.cs" />
     <Compile Include="Models\Segment.cs" />

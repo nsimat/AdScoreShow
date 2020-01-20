@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdScoreShow.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,10 @@ namespace AdScoreShow.Controllers
         // GET: DataShow
         public ActionResult Index()
         {
+            using(var dbContext = new AdScoreShowDbContext())
+            {
+
+            }
             return View();
         }
     }
