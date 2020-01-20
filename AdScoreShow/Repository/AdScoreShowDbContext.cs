@@ -11,7 +11,7 @@ namespace AdScoreShow.Repository
     {
         public AdScoreShowDbContext() : base("AdScoreShowDB")
         {
-
+            //Database.SetInitializer(new DropCreateDatabaseAlways<AdScoreShowDbContext>())
         }
 
         public DbSet<Market> Markets { get; set; }

@@ -159,6 +159,10 @@
     <Compile Include="Migrations\202001200212452_ModifyingBrandModel.designer.cs">
       <DependentUpon>202001200212452_ModifyingBrandModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001200345439_ModifyingAdvertisementModel1.cs" />
+    <Compile Include="Migrations\202001200345439_ModifyingAdvertisementModel1.designer.cs">
+      <DependentUpon>202001200345439_ModifyingAdvertisementModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdvertAired.cs" />
     <Compile Include="Models\Advertisement.cs" />
@@ -173,6 +177,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -311,11 +316,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\DataShow\Index.cshtml" />
+    <Content Include="Views\DataShow\HighestScore2.cshtml" />
+    <Content Include="Views\DataShow\HighestScore_1.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Upload\" />
-    <Folder Include="Views\DataShow\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -337,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001200212452_ModifyingBrandModel.resx">
       <DependentUpon>202001200212452_ModifyingBrandModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001200345439_ModifyingAdvertisementModel1.resx">
+      <DependentUpon>202001200345439_ModifyingAdvertisementModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -49,6 +49,7 @@ namespace AdScoreShow.Controllers
                     IEnumerable<dynamic> records = csvReader.GetRecords<dynamic>();
 
                     csvReader.Configuration.Delimiter = ";";
+                    csvReader.Configuration.MissingFieldFound = null;
 
                     //Processing records to seed the database
                     SeedDatabase(records);

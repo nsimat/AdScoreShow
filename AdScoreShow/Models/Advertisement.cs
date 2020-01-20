@@ -28,6 +28,7 @@ namespace AdScoreShow.Models
         public int SegmentID { get; set; }
         public Segment Segment { get; set; }
         public int BrandID { get; set; }
+        public Brand Brand { get; set; }
         public ICollection<AdvertAired> AdvertAireds { get; set; }
     }
 }

@@ -1,0 +1,14 @@
+﻿@*@model AdScoreShow.Models.AdvertAired*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>After seeding the database, we can now deduce the highest Score_1 and Score_2:</h2>
+
+
+<p>
+    @Html.ActionLink("Find the highest Score_1 value", "FindScore_1") |
+    @Html.ActionLink("Find the highest Score_2 value", "FindScore_1")
+</p>
