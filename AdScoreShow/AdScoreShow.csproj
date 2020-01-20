@@ -141,6 +141,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DataShowController.cs" />
     <Compile Include="Controllers\FileProcessingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -153,6 +154,10 @@
     <Compile Include="Migrations\202001192309408_ModifyingAdvertisementModel.cs" />
     <Compile Include="Migrations\202001192309408_ModifyingAdvertisementModel.designer.cs">
       <DependentUpon>202001192309408_ModifyingAdvertisementModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001200212452_ModifyingBrandModel.cs" />
+    <Compile Include="Migrations\202001200212452_ModifyingBrandModel.designer.cs">
+      <DependentUpon>202001200212452_ModifyingBrandModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdvertAired.cs" />
@@ -309,6 +314,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Upload\" />
+    <Folder Include="Views\DataShow\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001192309408_ModifyingAdvertisementModel.resx">
       <DependentUpon>202001192309408_ModifyingAdvertisementModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001200212452_ModifyingBrandModel.resx">
+      <DependentUpon>202001200212452_ModifyingBrandModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

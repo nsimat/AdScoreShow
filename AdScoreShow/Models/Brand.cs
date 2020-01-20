@@ -18,7 +18,7 @@ namespace AdScoreShow.Models
         public int Id { get; set; }
 
         [StringLength(25)]
-        public string BrandName { get; set; }
+        public string Name { get; set; }
         public int SegmentID { get; set; }
         public Segment Segment { get; set; }
         public ICollection<Advertisement> Advertisements { get; set; }

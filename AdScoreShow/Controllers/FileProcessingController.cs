@@ -37,7 +37,7 @@ namespace AdScoreShow.Controllers
 
             string fileExt = Path.GetExtension(viewModel.UpLoadedCsvFile.FileName).ToUpper();
 
-            if(fileExt == ".CSV")
+            if (fileExt == ".CSV")
             {
                 string fileName = Path.GetFileName(viewModel.UpLoadedCsvFile.FileName);
                 string path = AppDomain.CurrentDomain.BaseDirectory + "Upload\\" + fileName;
@@ -52,56 +52,84 @@ namespace AdScoreShow.Controllers
 
                     //Processing records to seed the database
                     SeedDatabase(records);
-                    var segments = new HashSet<Segment>();
-                    var brands = new HashSet<Market>();
-                    var markets = new HashSet<Market>();
-
-                    
-
-
                 }
-
+                return RedirectToAction("Index", "DataShow");
 
             }
             else
             {
-
-            }
-
-            
-
-            
-            return View();
+                ViewData["error"] = "upload failed";
+                return View(viewModel);
+            }            
         }
 
         private void SeedDatabase(IEnumerable<dynamic> records)
         {
-            using(var dbContext = new AdScoreShowDbContext())
-            {
-                foreach (var record in records)
-                {
-                    var segment = new Segment { Category = record.Segment };
-                    dbContext.Segments.Add(segment);
-                    //dbContext.SaveChanges();
 
-                    var brand = new Brand { BrandName = record.Brand };
-                    var market = new Market { Country = record.Market };
+            foreach (var record in records)
+            {
+                //Insert segment and market objects in the database
+                string brandName = record.Brand;
+                var segment = new Segment { Category = record.Segment };
+                var market = new Market { Country = record.Market };
+
+                using (var dbContext = new AdScoreShowDbContext())
+                {
+                    dbContext.Segments.Add(segment);
+                    dbContext.Markets.Add(market);
+                    dbContext.SaveChanges();
+                }
+
+                //Insert a brand object in the database
+                using (var dbContext = new AdScoreShowDbContext())
+                {
+                    var segmt = dbContext.Segments.Single(s => s.Category == segment.Category);
+                    var brand = new Brand
+                    {
+                        Name = brandName,
+                        SegmentID = segmt.Id
+                    };
+                    dbContext.Brands.Add(brand);
+                    dbContext.SaveChanges();
+                }
+
+                //Insert an Advertisement object in the database
+                using (var dbContext = new AdScoreShowDbContext())
+                {
+                    var segmt = dbContext.Segments.Single(s => s.Category == segment.Category);
+
+                    var brd = dbContext.Brands.Single(b => b.Name == brandName);
+
                     var advertisement = new Advertisement
                     {
                         Copy_Name = record.Copy_Name,
-                        Copy_Duration = record.Copy_Duration,//Convert to int
-                        SegmentID = 0,
-                        BrandID = 0
+                        Copy_Duration = Int32.Parse(record.Copy_Duration),
+                        SegmentID = segmt.Id,
+                        BrandID = brd.Id
                     };
+                    dbContext.Advertisements.Add(advertisement);
+                    dbContext.SaveChanges();
+                }                               
+                
+                //Finally, insert an AdvertAired object in the database
+                using(var dbContext = new AdScoreShowDbContext())
+                {
+                    var sgmt = dbContext.Segments.Single(s => s.Category == segment.Category);
+                    var mkt = dbContext.Markets.Single(m => m.Country == market.Country);
+                    string score2 = record.Score_2;
+                    string year = record.Year;
+
                     var advertAired = new AdvertAired
                     {
-                        AdvertisementID = 0,
-                        MarketID = 0,
-                        Year = record.Year,//convert string to int
-                        Score_1 = record.Score_1,
-                        Score_2 = record.Score_2
+                        AdvertisementID = sgmt.Id,
+                        MarketID = mkt.Id,
+                        Year = string.IsNullOrEmpty(year) ? null : (int?)Int32.Parse(year),
+                        Score_1 = string.IsNullOrEmpty(record.Score_1) ? null : (int?)Int32.Parse(record.Score_1),
+                        Score_2 = string.IsNullOrEmpty(score2) || score2.Equals("N/A") ? null : (int?)Int32.Parse(score2.Substring(0,2))
                     };
-                }
+                    dbContext.AdvertAireds.Add(advertAired);
+                    dbContext.SaveChanges();
+                }                
             }
         }
     }
