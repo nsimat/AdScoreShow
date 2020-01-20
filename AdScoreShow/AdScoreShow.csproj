@@ -320,6 +320,7 @@
     <Content Include="Views\DataShow\HighestScore2.cshtml" />
     <Content Include="Views\DataShow\HighestScore_1.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\DataShow\BestScore.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

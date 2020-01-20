@@ -26,7 +26,7 @@ namespace AdScoreShow.Controllers
         {
             using(var dbContext = new AdScoreShowDbContext())
             {
-                var result = dbContext.AdvertAireds.Select(a => a.Score_1 != null).Max();
+                var result = dbContext.AdvertAireds.Max(a => a.Score_1.Value);
 
                 ViewBag["Score_1"] = result;
 
@@ -39,7 +39,7 @@ namespace AdScoreShow.Controllers
         {
             using (var dbContext = new AdScoreShowDbContext())
             {
-                var result = (dbContext.AdvertAireds.Select(a => a.Score_2 != null)).Max();
+                var result = dbContext.AdvertAireds.Max(a => a.Score_2.Value);
 
                 ViewBag["Score_2"] = result;
 
@@ -51,10 +51,22 @@ namespace AdScoreShow.Controllers
         {
             using (var dbContext = new AdScoreShowDbContext())
             {
-                var result1 = dbContext.AdvertAireds.Select(a => a.Score_1 != null).Max();
-                var result2 = dbContext.AdvertAireds.Select(a => a.Score_2 != null).Max();
+                var result1 = dbContext.AdvertAireds.Max(a => a.Score_1.Value);
+                var result2 = dbContext.AdvertAireds.Max(a => a.Score_2.Value);
+                int result = 0;
+                int score1 = result1 / 30;
+                
 
-                //ViewBag["result"] = result3;
+                if( score1 >= result2)
+                {
+                    result = result1;
+                }
+                else
+                {
+                    result = result2;
+                }
+
+                ViewBag["BestScore"] = result;
 
                 return View();
             }
