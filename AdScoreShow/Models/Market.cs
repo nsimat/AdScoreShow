@@ -17,7 +17,8 @@ namespace AdScoreShow.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [StringLength(2)]
+        [Index(IsUnique = true)]
+        [StringLength(2)]        
         public string Country { get; set; }
         public ICollection<AdvertAired> AdvertAireds { get; set; }
     }

@@ -7,13 +7,13 @@ namespace AdScoreShow.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class ModifyingAdvertisementModel1 : IMigrationMetadata
+    public sealed partial class ModelswithUniqueFields : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ModifyingAdvertisementModel1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModelswithUniqueFields));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001200345439_ModifyingAdvertisementModel1"; }
+            get { return "202001212236419_ModelswithUniqueFields"; }
         }
         
         string IMigrationMetadata.Source

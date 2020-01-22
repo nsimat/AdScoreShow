@@ -18,7 +18,8 @@ namespace AdScoreShow.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [StringLength(25)]
+        [Index(IsUnique = true)]
+        [StringLength(25)]        
         public string Category { get; set; }
         public ICollection<Brand> Brands { get; set; }
         public ICollection<Advertisement> Advertisements { get; set; }

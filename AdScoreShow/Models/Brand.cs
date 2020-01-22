@@ -17,7 +17,8 @@ namespace AdScoreShow.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [StringLength(25)]
+        [Index(IsUnique = true)]
+        [StringLength(25)]        
         public string Name { get; set; }
         public int SegmentID { get; set; }
         public Segment Segment { get; set; }

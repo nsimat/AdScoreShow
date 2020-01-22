@@ -147,27 +147,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001191954469_InitialModel.cs" />
-    <Compile Include="Migrations\202001191954469_InitialModel.designer.cs">
-      <DependentUpon>202001191954469_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001192309408_ModifyingAdvertisementModel.cs" />
-    <Compile Include="Migrations\202001192309408_ModifyingAdvertisementModel.designer.cs">
-      <DependentUpon>202001192309408_ModifyingAdvertisementModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001200212452_ModifyingBrandModel.cs" />
-    <Compile Include="Migrations\202001200212452_ModifyingBrandModel.designer.cs">
-      <DependentUpon>202001200212452_ModifyingBrandModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001200345439_ModifyingAdvertisementModel1.cs" />
-    <Compile Include="Migrations\202001200345439_ModifyingAdvertisementModel1.designer.cs">
-      <DependentUpon>202001200345439_ModifyingAdvertisementModel1.cs</DependentUpon>
+    <Compile Include="Migrations\202001212236419_ModelswithUniqueFields.cs" />
+    <Compile Include="Migrations\202001212236419_ModelswithUniqueFields.designer.cs">
+      <DependentUpon>202001212236419_ModelswithUniqueFields.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AdvertAired.cs" />
     <Compile Include="Models\Advertisement.cs" />
     <Compile Include="Models\AdvertViewModel.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\CsvRecord.cs" />
     <Compile Include="Models\Market.cs" />
     <Compile Include="Models\Segment.cs" />
     <Compile Include="Models\UploadCsvFileViewModel.cs" />
@@ -338,17 +327,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001191954469_InitialModel.resx">
-      <DependentUpon>202001191954469_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001192309408_ModifyingAdvertisementModel.resx">
-      <DependentUpon>202001192309408_ModifyingAdvertisementModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001200212452_ModifyingBrandModel.resx">
-      <DependentUpon>202001200212452_ModifyingBrandModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001200345439_ModifyingAdvertisementModel1.resx">
-      <DependentUpon>202001200345439_ModifyingAdvertisementModel1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001212236419_ModelswithUniqueFields.resx">
+      <DependentUpon>202001212236419_ModelswithUniqueFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

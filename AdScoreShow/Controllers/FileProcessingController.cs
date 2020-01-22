@@ -117,6 +117,7 @@ namespace AdScoreShow.Controllers
                 {
                     var sgmt = dbContext.Segments.Single(s => s.Category == segment.Category);
                     var mkt = dbContext.Markets.Single(m => m.Country == market.Country);
+                    string score1 = record.Score_1;
                     string score2 = record.Score_2;
                     string year = record.Year;
 
@@ -124,8 +125,8 @@ namespace AdScoreShow.Controllers
                     {
                         AdvertisementID = sgmt.Id,
                         MarketID = mkt.Id,
-                        Year = string.IsNullOrEmpty(year) ? null : (int?)Int32.Parse(year),
-                        Score_1 = string.IsNullOrEmpty(record.Score_1) ? null : (int?)Int32.Parse(record.Score_1),
+                        Year = string.IsNullOrEmpty(year)  || year.Equals("N/A") ? null : (int?)Int32.Parse(year),
+                        Score_1 = string.IsNullOrEmpty(score1) || score1.Equals("N/A") ? null : (int?)Int32.Parse(record.Score_1),
                         Score_2 = string.IsNullOrEmpty(score2) || score2.Equals("N/A") ? null : (int?)Int32.Parse(score2.Substring(0,2))
                     };
                     dbContext.AdvertAireds.Add(advertAired);
