@@ -23,7 +23,7 @@ namespace AdScoreShow.Models
         public string Copy_Name { get; set; }
 
         [Index("SameAdvert", 2, IsUnique = true)]        
-        public int Copy_Duration { get; set; }
+        public int? Copy_Duration { get; set; }
 
         public int SegmentID { get; set; }
         public Segment Segment { get; set; }
